@@ -2,7 +2,7 @@
 const API_URL = "https://script.google.com/macros/s/AKfycbxcI5_3rIJtgTS5KMwlISelQeHzRU705bgFbCRXCW9cuHDRsADD_oj7YrF3X41LfQ35/exec";
 
 // Ordre des question. URL modifier pour empecher la triche
-const ORDER = ["intro", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+const ORDER = ["1qkz", "2drz", "3vpx", "4mtf", "5wsz", "6bjy", "7nva", "8gxl", "9ftv", "10ksp"]
 const totalQuestions = ORDER.length;
 
 const params = new URLSearchParams(window.location.search)
@@ -43,7 +43,7 @@ const QUESTIONS = {
         Quel est maintenant le tube le plus vide ?
         `,
         r: ["images/question5n3.png", "images/question5n1.png", "images/question5n2.png"],
-        ok: ["images/question5n1"],
+        ok: "images/question5n1.png",
         img: "images/question5.jpg",
         type: "image" // input image
     },
@@ -195,7 +195,7 @@ function checkIfAlreadyDone() {
         if (finishedCount >= totalQuestions) {
             document.getElementById('feedbackMsg').innerHTML = `
                 Félicitations <span>${pseudo}</span> !<br><br>
-                Tu as terminé le quiz ! Rend toi sur le grand écran pour voir ton résultat 🏆
+                Tu as terminé le quiz ! Rends-toi sur le Flashcode des résultats pour voir ta position 🏆
             `;
         } else {
             // Sinon message de progression + prochaine étape
@@ -243,16 +243,17 @@ function showQuestion() {
     const optionsContainer = document.getElementById('qOptions');
     const inputZone = document.getElementById('inputZone');
     const freeInput = document.getElementById('freeInput');
-    const validateBtn = inputZone.querySelector('button');
+    const validateBtn = document.getElementById('validateBtn');
 
     optionsContainer.innerHTML = "";
     optionsContainer.classList.add('hidden');
-    inputZone.classList.remove('hidden'); // TOUJOURS visible
+    inputZone.classList.add('hidden') // Caché par défaut, afficher si besoin
+    //inputZone.classList.remove('hidden'); // TOUJOURS visible
     freeInput.classList.add('hidden');    // Caché par défaut
     selectedOptions = [];
 
     // --- SÉCURITÉ DEVISE € POUR LA QUESTION 8 ---
-    if (qId === "8") {
+    if (qId === "8gxl") {
         inputZone.classList.add('euro');
     } else {
         inputZone.classList.remove('euro');
@@ -260,10 +261,10 @@ function showQuestion() {
 
     // Question type texte ou nombre
     if (q.type === "text" || q.type === "number") {
-
+        inputZone.classList.remove('hidden');
         freeInput.classList.remove('hidden');
         freeInput.type = q.type;
-        freeInput.placeholder= (qId ==="8") ? "0" : "Ta réponse ici...";
+        freeInput.placeholder= (qId ==="8gxl") ? "0" : "Ta réponse ici...";
         freeInput.value = "";
         
         validateBtn.onclick = () => validateFreeInput();
@@ -272,6 +273,7 @@ function showQuestion() {
     }
 
     // Question type choix multiples
+    /*
     else if (q.type === "multiple") {
         optionsContainer.classList.remove('hidden');
         validateBtn.onclick = () => checkMultipleChoice(q);
@@ -297,7 +299,7 @@ function showQuestion() {
             optionsContainer.appendChild(btn);
         });
     }
-
+    */
     // Question type choix unique (image ou bouton)
     else {
         optionsContainer.classList.remove('hidden');
@@ -410,7 +412,7 @@ function submit(isCorrect, answer) {
             <strong>${currentMsg}</strong><br><br>
             🎉 Félicitations <span>${pseudo}</span> !<br>
             Tu as répondu aux <strong>${totalQuestions}</strong> questions du quiz.<br><br>
-            Tu peux maintenant aller voir le classement final sur le grand écran !
+            Tu peux maintenant aller sur le Flashcode des résultats pour voir ta position !
         `;
     } else {
         // Message progression
@@ -471,7 +473,7 @@ function adminReset() {
         
         alert("Mode " + mode + " activé. Prêt pour un nouveau pseudo.");
         
-        window.location.href = window.location.pathname + "?q=intro";
+        window.location.href = window.location.pathname + "?q=" + ORDER[0];
 
     } else if (code !== null) {
         
