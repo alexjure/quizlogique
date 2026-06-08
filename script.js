@@ -9,35 +9,35 @@ const params = new URLSearchParams(window.location.search)
 
 // Liste Questions: t=texte, r=proposition réponse, ok=réponse, img=image, type=type de quesiton (choice, image, input texte, input number, choix multiple)
 const QUESTIONS = {
-    "intro": {
+    "1qkz": {
         t: `Question 1
         Quelle lettre faut-il ajouter pour compléter cette suite logique ?`,
         ok: "M",
         img: "images/question1.jpg",
         type: "text" // input texte
     },
-    "2": {
+    "2drz": {
         t: `Question 2
         Quel fruit n'est pas correctement associé à son fond ?`,
         r: ["images/question2n1.png", "images/question2n2.png", "images/question2n3.jpg", "images/question2n4.png"],
         ok: "images/question2n1.png",
         type: "image" // image
     },
-    "3": {
+    "3vpx": {
         t: `Question 3
         Combien y a-t-il de rectangles sur ce terrain de foot ?`,
         ok: "9",
         img: "images/question3.png",
         type: "number" // input texte
     },
-    "4": {
+    "4mtf": {
         t: `Question 4
         En emboîtant correctement les 4 pièces de ce puzzle, on obtient une addition. Quel est le résultat divisé par 3 ?`,
         ok: "11",
         img: "images/question4.png",
         type: "number" // input number
     },
-    "5": {
+    "5wsz": {
         t: `Question 5
         Cette fleur a été peintre en utilisant ces 3 tubes de couleurs primaires. 
         Quel est maintenant le tube le plus vide ?
@@ -47,7 +47,7 @@ const QUESTIONS = {
         img: "images/question5.jpg",
         type: "image" // input image
     },
-    "6": {
+    "6bjy": {
         t: `Question 6
         Laquelle de ces cartes de crédit a le plus de pouvoir d'achat ?`,
         r:["A", "B", "C"],
@@ -55,14 +55,14 @@ const QUESTIONS = {
         img: "images/question6.jpg",
         type: "choice" // input choice
     },
-    "7": {
+    "7nva": {
         t: `Question 7
         Une barrière comporte 12 poteaux séparés d'un mètre chacun. Quelle sera la longueur de la barrière en mètres ?`,
         ok: "11",
         img: "images/question7.jpg",
         type: "number" // input number
     },
-    "8": {
+    "8gxl": {
         t: `Question 8
         Dans notre magasin 100% logique, un pull 8€, une chemise 14€ et un short 10€.
         Combien vaut une casquette ?`,
@@ -70,14 +70,14 @@ const QUESTIONS = {
         img: "images/question8.jpg",
         type: "number" // input number
     },
-    "9": {
+    "9ftv": {
         t: `Question 9
         Combien de triangles de n'importe quelle taille y a-t-il dans cette figure ?`,
         ok: "10",
         img: "images/question9.jpg",
         type: "number" // input number
     },
-    "10": {
+    "10ksp": {
         t: `Question 10
         Logique quel est le CODE pour ouvrir le coffre-fort ?`,
         r:["15-3-5-4", "3-4-5-15", "3-15-4-5", "4-3-15-3"],
