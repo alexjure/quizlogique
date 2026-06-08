@@ -195,7 +195,7 @@ function checkIfAlreadyDone() {
         if (finishedCount >= totalQuestions) {
             document.getElementById('feedbackMsg').innerHTML = `
                 Félicitations <span>${pseudo}</span> !<br><br>
-                Tu as terminé le quiz ! Rends-toi sur le Flashcode des résultats pour voir ta position 🏆
+                Tu as terminé le quiz ! Rends-toi sur le QrCode des résultats pour voir ta position 🏆
             `;
         } else {
             // Sinon message de progression + prochaine étape
@@ -412,7 +412,7 @@ function submit(isCorrect, answer) {
             <strong>${currentMsg}</strong><br><br>
             🎉 Félicitations <span>${pseudo}</span> !<br>
             Tu as répondu aux <strong>${totalQuestions}</strong> questions du quiz.<br><br>
-            Tu peux maintenant aller sur le Flashcode des résultats pour voir ta position !
+            Tu peux maintenant aller sur le QrCode des résultats pour voir ta position !
         `;
     } else {
         // Message progression
