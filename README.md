@@ -1,11 +1,11 @@
 Départ quiz
 
-https://alexjure.github.io/presentation_projet/Index.html?q=intro
+https://alexjure.github.io/quizlogique/Index.html
 
 Classement mode SOLO
 
-https://alexjure.github.io/presentation_projet/live.html
+https://alexjure.github.io/quizlogique/live.html
 
 Classement mode EQUIPE
 
-https://alexjure.github.io/presentation_projet/live.html?mode=EQUIPE
+https://alexjure.github.io/quizlogique/live.html?mode=EQUIPE
