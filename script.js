@@ -39,8 +39,7 @@ const QUESTIONS = {
     },
     "5wsz": {
         t: `Question 5
-        Cette fleur a été peintre en utilisant ces 3 tubes de couleurs primaires. 
-        Quel est maintenant le tube le plus vide ?
+        Cette fleur a été peinte en utilisant ces 3 tubes de couleurs primaires. Quel est maintenant le tube le plus vide ?
         `,
         r: ["images/question5n3.png", "images/question5n1.png", "images/question5n2.png"],
         ok: "images/question5n1.png",
@@ -49,7 +48,7 @@ const QUESTIONS = {
     },
     "6bjy": {
         t: `Question 6
-        Laquelle de ces cartes de crédit a le plus de pouvoir d'achat ?`,
+        Laquelle de ces cartes de crédit a le plus faible pouvoir d'achat ?`,
         r:["A", "B", "C"],
         ok: "B",
         img: "images/question6.jpg",
@@ -64,7 +63,7 @@ const QUESTIONS = {
     },
     "8gxl": {
         t: `Question 8
-        Dans notre magasin 100% logique, un pull 8€, une chemise 14€ et un short 10€.
+        Dans notre magasin 100% logique, un pull vaut 8€, une chemise 14€ et un short 10€.
         Combien vaut une casquette ?`,
         ok: "18",
         img: "images/question8.jpg",
@@ -79,7 +78,7 @@ const QUESTIONS = {
     },
     "10ksp": {
         t: `Question 10
-        Logique quel est le CODE pour ouvrir le coffre-fort ?`,
+        Logiquement quel est le CODE pour ouvrir le coffre-fort ?`,
         r:["15-3-5-4", "3-4-5-15", "3-15-4-5", "4-3-15-3"],
         ok: "3-15-4-5",
         img: "images/question10.png",
@@ -232,12 +231,20 @@ function showQuestion() {
     document.getElementById('qTitle').innerText = q.t;
 
     const imgElement = document.getElementById('qImg');
+    const quizContainer = document.getElementById('stepQuiz')
     
     if (q.img) {
         imgElement.src = q.img;
         imgElement.classList.remove('hidden');
+
+        if(qId === "5wsz"){
+            quizContainer.classList.add('q5Layout');
+        } else{
+            quizContainer.classList.remove('q5Layout');
+        }
     } else {
         imgElement.classList.add('hidden');
+        quizContainer.classList.remove('q5Layout');
     }
 
     const optionsContainer = document.getElementById('qOptions');
@@ -397,6 +404,8 @@ function submit(isCorrect, answer) {
     const imgElement = document.getElementById('qImg');
     if (imgElement) imgElement.classList.add('hidden');
 
+    document.getElementById('stepQuiz').classList.remove('q5Layout');
+
     showStep('stepThanks');
 
     
@@ -446,12 +455,12 @@ function showStep(id) {
     });
 }
 
-// Fonction admin choix mode (code: 2026)-- 1: Solo -- 2: Equipe
+// Fonction admin choix mode (code: 2026aj)-- 1: Solo -- 2: Equipe
 function adminReset() {
     
     const code = prompt("Code secret :");
     
-    if (code === "2026") {
+    if (code === "2026aj") {
         
         const choix = prompt("1: Mode SOLO\n2: Mode ÉQUIPE");
         
