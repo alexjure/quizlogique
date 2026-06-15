@@ -38,17 +38,18 @@ body {
         box-sizing: border-box;
 }
 
-.logo{
+.logo {
         display: flex;
         justify-content: center;
         width: 90%;
+        max-width: 380px;
 }
 
-.logo img{
-        width: 60%;
+.logo img {
+        width: 70%;
         border-radius: 10px;
-        
 }
+
 /*.card img{
         width: 70%;
         border-radius: 10px;
@@ -85,18 +86,18 @@ input {
 
 /*Input avec devise €*/
 
-#inputZone.euro{
+#inputZone.euro {
         position: relative;
         width: 100%;
 }
 
-#inputZone.euro #freeInput{
+#inputZone.euro #freeInput {
         padding-right: 35px;
         text-align: right;
 }
 
-#inputZone.euro::after{
-        content:"€";
+#inputZone.euro::after {
+        content: "€";
         position: absolute;
         right: 15px;
         top: 26px;
@@ -221,11 +222,11 @@ button {
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
 
-        .card{
+        .card {
                 box-shadow: none;
         }
 
-        button{
+        button {
                 margin: 10px 0;
         }
 
@@ -249,7 +250,7 @@ button {
 
         /*Input réponse*/
 
-        input{
+        input {
                 font-size: 20px;
         }
 
@@ -281,6 +282,11 @@ button {
                 box-shadow: none;
         }
 
+        .logo img {
+                width: 60%;
+                border-radius: 10px;
+        }
+
         button {
                 margin: 10px 0;
         }
@@ -305,20 +311,20 @@ button {
         /*Question 5*/
 
         /*Réduction image*/
-        .q5Layout #qImg{
+        .q5Layout #qImg {
                 min-width: auto !important;
                 max-width: 80%;
                 margin: 0 auto 5px auto;
         }
 
         /*réduction espace titre*/
-        .q5Layout #qTitle{
+        .q5Layout #qTitle {
                 font-size: 1.1rem;
                 margin-bottom: 8px;
                 line-height: 1.2;
         }
 
-        .q5Layout #qOptions .btnOpt{
+        .q5Layout #qOptions .btnOpt {
                 flex: 0 1 calc(50% - 5px) !important;
                 aspect-ratio: auto !important;
                 min-height: 40px !important;
@@ -326,7 +332,7 @@ button {
                 padding: 4px !important;
         }
 
-        .q5Layout #qOptions .imgOption{
+        .q5Layout #qOptions .imgOption {
                 height: 100%;
                 width: 100%;
                 object-fit: contain;
